@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exact-speculative-ctmc"
+version = "0.1.0"
+description = "Exact speculative simulation and approximate solvers for masked diffusion CTMCs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = [
+  "accelerate==0.34.2",
+  "torch==2.5.1",
+  "transformers==4.49.0",
+]
+
+[project.scripts]
+specctmc = "specctmc.run:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
